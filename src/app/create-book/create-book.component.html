@@ -1,0 +1,30 @@
+<div class="cadastro-container">
+  <mat-card class="cadastro-card">
+    <mat-card-title>Cadastro de Produto</mat-card-title>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome do Livro</mat-label>
+        <input matInput placeholder="Digite o nome do livro"/>
+        <mat-error>
+          O nome do produto é obrigatório.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- <div class="toggle-container">
+        <mat-slide-toggle color="primary">
+          Produto Ativo
+        </mat-slide-toggle>
+      </div> -->
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+          Salvar
+        </button>
+        <button mat-raised-button color="warn" type="button" routerLink="/produtos">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
