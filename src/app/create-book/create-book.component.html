@@ -1,21 +1,39 @@
 <div class="cadastro-container">
   <mat-card class="cadastro-card">
-    <mat-card-title>Cadastro de Livro</mat-card-title>
+    <mat-card-title style="margin-bottom: 10px; color: #005cbb">Cadastro de Livro</mat-card-title>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nome do Livro</mat-label>
-        <input matInput placeholder="Digite o nome do livro"/>
-        <mat-error>
-          O nome do produto é obrigatório.
-        </mat-error>
+        <input matInput placeholder="Digite o nome do livro" formControlName="nome"/>
+        <mat-error>O nome do produto é obrigatório.</mat-error>
       </mat-form-field>
 
-      <!-- <div class="toggle-container">
-        <mat-slide-toggle color="primary">
-          Produto Ativo
-        </mat-slide-toggle>
-      </div> -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Autor</mat-label>
+        <input matInput placeholder="Digite o nome do autor" formControlName="autor"/>
+        <mat-error>O autor é obrigatório.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Editora</mat-label>
+        <input matInput placeholder="Digite o nome da editora" formControlName="editora"/>
+        <mat-error>A editora é obrigatória.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>ISBN</mat-label>
+        <input matInput placeholder="Digite o ISBN" formControlName="isbn"/>
+        <mat-error>O ISBN é obrigatório.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Data de Lançamento</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="Selecione a data" formControlName="dataLancamento"/>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>A data é obrigatória.</mat-error>
+      </mat-form-field>
 
       <div class="form-actions">
         <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
