@@ -1,12 +1,14 @@
 <div class="cadastro-container">
   <mat-card class="cadastro-card">
-    <mat-card-title class="titulo-cadastro">Cadastre um livro:</mat-card-title>
+    <mat-card-title class="titulo-cadastro">
+      {{ isEditMode ? 'Editar Livro' : 'Cadastre um livro:' }}
+    </mat-card-title>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nome do Livro</mat-label>
-        <input matInput placeholder="Digite o nome do livro" formControlName="nome"/>
-        <mat-error>O nome do produto é obrigatório.</mat-error>
+        <input matInput placeholder="Digite o nome do livro" formControlName="titulo"/>
+        <mat-error>O nome do livro é obrigatório.</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
@@ -39,7 +41,7 @@
         <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
           Salvar
         </button>
-        <button mat-raised-button color="warn" type="button" routerLink="/produtos">
+        <button mat-raised-button color="warn" type="button" routerLink="/">
           Cancelar
         </button>
       </div>

@@ -5,4 +5,5 @@ import { CreateBookComponent } from './create-book/create-book.component';
 export const routes: Routes = [
   {path: '', component: BookListComponent , title: 'Livros'},
   {path: 'create', component: CreateBookComponent , title: 'Cadastrar Livro'},
+  {path: 'edit/:id', component: CreateBookComponent , title: 'Editar Livro'}
 ];
