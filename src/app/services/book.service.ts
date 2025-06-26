@@ -8,7 +8,8 @@ export interface Livro {
   autor: string;
   editora: string;
   isbn: string;
-  dataLancamento: string;
+  dataPublicacao: string;
+  categoria?: string;
 }
 
 @Injectable({
@@ -20,6 +21,10 @@ export class BookService {
 
   constructor() { }
 
+  getBooks(): Observable<Livro[]> {
+    return this.http.get<Livro[]>(this.apiUrl);
+  }
+
   getBookById(id: number): Observable<Livro> {
     return this.http.get<Livro>(`${this.apiUrl}/${id}`);
   }
@@ -30,5 +35,9 @@ export class BookService {
 
   updateBook(id: number, livro: Livro): Observable<Livro> {
     return this.http.put<Livro>(`${this.apiUrl}/${id}`, livro);
+  }
+
+  deleteBook(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

@@ -30,8 +30,14 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Categoria</mat-label>
+        <input matInput placeholder="Digite a categoria" formControlName="categoria"/>
+        <mat-error>A categoria é obrigatória.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Data de Lançamento</mat-label>
-        <input matInput [matDatepicker]="picker" placeholder="Selecione a data" formControlName="dataLancamento"/>
+        <input matInput [matDatepicker]="picker" placeholder="Selecione a data" formControlName="dataPublicacao"/>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error>A data é obrigatória.</mat-error>

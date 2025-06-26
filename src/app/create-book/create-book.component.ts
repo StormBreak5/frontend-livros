@@ -44,7 +44,8 @@ export class CreateBookComponent implements OnInit {
       autor: ['', Validators.required],
       editora: ['', Validators.required],
       isbn: ['', Validators.required],
-      dataLancamento: ['', Validators.required]
+      categoria: ['', Validators.required],
+      dataPublicacao: ['', Validators.required]
     });
   }
 
